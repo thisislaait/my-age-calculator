@@ -64,7 +64,6 @@ function validate() {
           }
       } else {
           i.style.borderColor = "black";
-          parent.querySelector("label").style.color = "red";
           parent.querySelector("small").innerText = "";
       }
   });
