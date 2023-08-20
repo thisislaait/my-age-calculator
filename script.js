@@ -35,55 +35,52 @@ function validate() {
           parent.querySelector("small").innerText = "This field is required.";
           validator = false;
           hasInvalidInput = true;
+      } else if (i === input_year && (parseInt(i.value) > year || parseInt(i.value) < 0)) {
+          i.style.borderColor = "red";
+          parent.querySelector("label").style.color = "red";
+          parent.querySelector("small").innerText = "Year cannot be in the future or negative.";
+          validator = false;
+      } else if (input_month.value > 12 || input_month.value <= 0) {
+          input_month.style.borderColor = "red";
+          input_month.parentElement.querySelector("label").style.color = "red";
+          input_month.parentElement.querySelector("small").innerText = "Month must be between 1 and 12.";
+          validator = false;
+      } else if (input_day.value > 31 || input_day.value <= 0) {
+          input_day.style.borderColor = "red";
+          input_day.parentElement.querySelector("label").style.color = "red";
+          input_day.parentElement.querySelector("small").innerText = "Day must be between 1 and 31.";
+          validator = false;
+      } else if (input_month.value === "2" && input_day.value > 28) {
+          // Check for February and limit day to 28
+          input_day.style.borderColor = "red";
+          input_day.parentElement.querySelector("label").style.color = "red";
+          input_day.parentElement.querySelector("small").innerText = "February has 28 days.";
+          validator = false;
+      } else if (input_month.value === "4" || input_month.value === "6" || input_month.value === "9" || input_month.value === "11") {
+          // Check for months with 30 days and limit day to 30
+          if (input_day.value > 30) {
+              input_day.style.borderColor = "red";
+              input_day.parentElement.querySelector("label").style.color = "red";
+              input_day.parentElement.querySelector("small").innerText = "This month has 30 days.";
+              validator = false;
+          }
       } else {
-      i.style.borderColor = "black";
-      parent.querySelector("label").style.color = "black"; 
-      parent.querySelector("small").innerText = "";
+          i.style.borderColor = "black";
+          parent.querySelector("small").innerText = "";
+      }
+  });
+  
+  if (hasInvalidInput) {
+    inputs.forEach((i) => {
+      if (!i.value) {
+        const parent = i.parentElement;
+        parent.querySelector("label").style.color = "red"; 
       }
     });
-  
-// Next line of codes are seperate validation per number of days in a month
-     if (!hasInvalidInput && (input_year.value > year || input_year.value < 0)) {
-    input_year.style.borderColor = "red";
-    input_year.parentElement.querySelector("label").style.color = "red";
-    input_year.parentElement.querySelector("small").innerText = "Year cannot be in the future or negative.";
-    validator = false;
-    } else if (!hasInvalidInput && (input_month.value > 12 || input_month.value <= 0)) {
-      input_month.style.borderColor = "red";
-      input_month.parentElement.querySelector("label").style.color = "red";
-      input_month.parentElement.querySelector("small").innerText = "Month must be between 1 and 12.";
-      validator = false;
-     } else if (!hasInvalidInput && (input_month.value === "2" && input_day.value > 28)) {
-      // Check for February and limit day to 28
-      input_day.style.borderColor = "red";
-      input_day.parentElement.querySelector("label").style.color = "red";
-      input_day.parentElement.querySelector("small").innerText = "February has 28 days.";
-      validator = false;
-    } else if (!hasInvalidInput && ["4", "6", "9", "11"].includes(input_month.value) && input_day.value > 30) {
-      // Check for months with 30 days and limit day to 30
-      input_day.style.borderColor = "red";
-      input_day.parentElement.querySelector("label").style.color = "red";
-      input_day.parentElement.querySelector("small").innerText = "This month has 30 days.";
-      validator = false;
-    } else if (!hasInvalidInput && input_day.value > 31) {
-      // Check for months with 31 days and limit day to 31
-      input_day.style.borderColor = "red";
-      input_day.parentElement.querySelector("label").style.color = "red";
-      input_day.parentElement.querySelector("small").innerText = "This month has 31 days.";
-      validator = false;
-    }
-    
-      if (hasInvalidInput) {
-        inputs.forEach((i) => {
-          if (!i.value) {
-            const parent = i.parentElement;
-            parent.querySelector("label").style.color = "red"; 
-          }
-        });
-      }
-    
-      return validator && !hasInvalidInput;
   }
+
+  return validator && !hasInvalidInput;
+}
 
 
 function handleSubmit(e) {
