@@ -37,6 +37,10 @@
     margin-bottom: 1rem;
     overflow: hidden;
   }
+
+  .submit-block button {
+    width: 100%
+  }
   
   .line {
     border: none;
