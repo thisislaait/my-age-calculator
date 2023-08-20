@@ -24,6 +24,7 @@ const months = [31, 28 , 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 function validate() {
   const inputs = document.querySelectorAll("input");
   let validator = true;
+  let hasInvalidInput = false;
   
   inputs.forEach((i) => {
       const parent = i.parentElement;
@@ -33,6 +34,7 @@ function validate() {
           parent.querySelector("label").style.color = "red";
           parent.querySelector("small").innerText = "This field is required.";
           validator = false;
+          hasInvalidInput = true;
       } else if (i === input_year && (parseInt(i.value) > year || parseInt(i.value) < 0)) {
           i.style.borderColor = "red";
           parent.querySelector("label").style.color = "red";
@@ -68,7 +70,16 @@ function validate() {
       }
   });
   
-  return validator;
+  if (hasInvalidInput) {
+    inputs.forEach((i) => {
+      if (!i.value) {
+        const parent = i.parentElement;
+        parent.querySelector("label").style.color = "red"; 
+      }
+    });
+  }
+
+  return validator && !hasInvalidInput;
 }
 
 
