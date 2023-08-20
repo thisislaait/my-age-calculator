@@ -58,7 +58,16 @@
   }
 
   button {
-    padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 50%;
+  border: none;
+  font-size: 0.5rem;
+  background-color: var(--sec-color-one);
+  color: var(--sec-color-two);
+  cursor: pointer;
   }
 
   img{
