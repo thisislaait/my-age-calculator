@@ -33,9 +33,9 @@
   .submit-block {
     position: relative;
     flex-direction: column;
-    align-items: center;
     gap: 1rem;
     margin-bottom: 1rem;
+    overflow: hidden;
   }
   
   .line {
@@ -95,9 +95,9 @@
   .submit-block {
     position: relative;
     flex-direction: column;
-    align-items: center;
     gap: 1rem;
     margin-bottom: 1rem;
+    overflow: hidden;
   }
   
   .line {
