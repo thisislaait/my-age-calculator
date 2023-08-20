@@ -31,37 +31,31 @@
   }
 
   .submit-block {
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin-top: 2px;
-    margin-bottom: 2rem;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  margin-top: 2px;
+  margin-bottom: 2rem;
+}
 
   .line {
-    width: 100%;
-    height: 1px;
-    background-color: var(--sec-color-three);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: -1;
-  }
+  border: none;
+  border-top: 1px solid var(--sec-color-three);
+  width: 75%; 
+  margin: 0;
+}
 
   button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  padding: 0.8rem;
   border-radius: 50%;
   border: none;
-  font-size: 0.5rem;
   background-color: var(--sec-color-one);
   color: var(--sec-color-two);
   cursor: pointer;
-  }
+}
 
   img{
     width: 20px;
