@@ -32,7 +32,7 @@
 
   .submit-block {
     position: relative;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     gap: 1rem;
     margin-top: 2px;
