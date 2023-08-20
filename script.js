@@ -103,6 +103,10 @@ function handleSubmit(e) {
     output_month.innerHTML =m;
     output_year.innerHTML =y;
 
+    localStorage.setItem("calculatedAgeYears", y);
+    localStorage.setItem("calculatedAgeMonths", m);
+    localStorage.setItem("calculatedAgeDays", d);
+
 
   }
 }
