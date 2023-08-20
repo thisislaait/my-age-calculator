@@ -106,6 +106,17 @@ button {
   z-index: 2;
 }
 
+button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  border-top: 1px solid var(--sec-color-three);
+  z-index: -1;
+}
+
 img {
   width: 45%;
 }
