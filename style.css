@@ -96,7 +96,7 @@ button {
   justify-content: center;
   align-items: center;
   padding: 1rem; 
-  border-radius: 55%;
+  border-radius: 50%;
   border: none;
   font-size: .5rem;
   background-color: var(--sec-color-one);
