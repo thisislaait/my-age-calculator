@@ -47,6 +47,7 @@ form {
 
 .form-container {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
   width: 75%;
 }
@@ -57,21 +58,19 @@ form {
   width: 180px;
 }
 
-/*.submit-block {
+.submit-block {
   display: flex;
   align-items: center;
   justify-content: space-between; 
   margin-top: 2px;
   margin-bottom: 2rem;
-}*/
+}
 
 .line {
   border: none;
   border-top: 1px solid var(--sec-color-three);
   width: 90%; 
-  top: 50%;
-  postion: absolute;
-  z-index: -1;
+  margin: 0;
 }
 
 
@@ -103,9 +102,7 @@ button {
   background-color: var(--sec-color-one);
   color: var(--sec-color-two);
   cursor: pointer;
-  margin: 0 auto; 
-  position: relative;
-  z-index: 2;
+ 
 }
 
 img {
