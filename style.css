@@ -107,15 +107,14 @@ button {
 }
 
 img {
-  width: 25px;
+  width: 45%;
 }
 
 
 
 #submit-btn {
   font-size: .2rem;
-  background-color: var(--sec-color-one);
-  color: var(--sec-color-two);
+
 }
 
 h1 {
