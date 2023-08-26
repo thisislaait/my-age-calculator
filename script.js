@@ -110,3 +110,17 @@ function handleSubmit(e) {
 
   }
 }
+
+// This is the how to get the stored age from local storage when the page loads
+window.addEventListener("load", () => {
+  const storedYears = localStorage.getItem("calculatedAgeYears");
+  const storedMonths = localStorage.getItem("calculatedAgeMonths");
+  const storedDays = localStorage.getItem("calculatedAgeDays");
+
+  if (storedYears && storedMonths && storedDays) {
+    output_year.innerHTML = storedYears;
+    output_month.innerHTML = storedMonths;
+    output_day.innerHTML = storedDays;
+  }
+});
+
